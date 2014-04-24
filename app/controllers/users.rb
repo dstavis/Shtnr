@@ -3,13 +3,17 @@ get '/users' do
 end
 
 post '/users' do
-  #create a new users
+  #create a new user
+  user = User.create(params)
+  session[:user_id] = user.id
+  redirect "/users/#{user.id}"
 end
 
 get '/users/:id' do
-  #display an individual users
+  @id = params[:id].to_i
+  erb :profile_page
 end
 
 put '/users/:id' do
-  #update a specific users
+  #update a specific user
 end
