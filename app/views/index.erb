@@ -1,26 +1,9 @@
-
-<% unless logged_in? %>
-  <form action='/login' method='post'>
-    Email: <input type='text' name='email'>
-    Password: <input type='text' name='password'>
-    <input type='submit' value='Login'>
+<div class='container'>
+  <form action='/urls' method='post'>
+    <input type='text' name='original' size='50%'>
+    <input type='submit' value='Shtn'>
   </form>
-
-  <form action='/users' method='post'>
-    Email: <input type='text' name='email'>
-    Password: <input type='text' name='password'>
-    <input type='submit' value='Create Account'>
-  </form>
-<% else %> <br>
-  <form action='/logout' method='post'>
-    <input type='submit' value='Logout'>
-  </form>
-<% end %>
-
-<form action='/urls' method='post'>
-  <input type='text' name='original'>
-  <input type='submit' value='Shtn'>
-</form>
+</div>
 
 <ol>
 <% @urls.each do |url|%>
