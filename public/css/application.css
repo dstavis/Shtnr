@@ -44,9 +44,11 @@ header form{
 
 .main{
   padding-top:1px;
-  padding-left: 40px;
-  background-color: teal; /*#cbeb66;*/
-  /*color: white;*/
+  padding-left: 40px; /*#cbeb66;*/
+}
+
+body{
+  background-color: teal;
 }
 
 .container form input{

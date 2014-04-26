@@ -1,5 +1,3 @@
-require 'securerandom'
-
 get '/' do
   # Look in app/views/index.erb
   @urls = Url.all
@@ -7,11 +5,10 @@ get '/' do
 end
 
 post '/urls' do
-
   url = Url.new(params)
-  url.short = SecureRandom.urlsafe_base64(4)
-  url.user = User.find(session[:user_id])
+  url.user = User.find(session[:user_id]) if logged_in?
   url.save
+
   if logged_in?
     redirect "users/#{current_user.id}"
   else
@@ -20,10 +17,17 @@ post '/urls' do
 end
 
 get '/:short_url' do
-  #shtnr/dt4h
   url = Url.find_by_short(params[:short_url])
-  url.click_count+=1
-  url.save
-  redirect(url.original)
+  
+  if url
+    url.click
+    redirect(url.original)
+  else
+    if logged_in?
+      redirect "users/#{current_user.id}?message='No such url'"
+    else
+      redirect "/?message='No such url'"
+    end
+  end
 end
 

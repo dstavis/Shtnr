@@ -6,28 +6,16 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Shtnr-The final frontier</title>
 </head>
 <body>
   <header>
-    <a href='/'><img class='logo' src="will_shatner.jpg"><h1>Shtnr</h1></a>
+    <a href='/'><img class='logo' src="/will_shatner.jpg"><h1>Shtnr</h1></a>
     <div class="login">
       <% unless logged_in? %>
-        <form action='/login' method='post'>
-          Email: <input type='text' name='email'>
-           Password: <input type='text' name='password'>
-          <input type='submit' value='Login'>
-        </form>
-
-        <form action='/users' method='post'>
-        Email: <input type='text' name='email'>
-        Password: <input type='text' name='password'>
-        <input type='submit' value='Create Account'>
-      </form>
-      <% else %> <br>
-        <form action='/logout' method='post'>
-          <input type='submit' value='Logout'>
-        </form>
+        <%= erb :_login_or_signup %>
+      <% else %>
+        <%= erb :_logout %>
     <% end %>
   </div>
 </header>
