@@ -1,5 +1,7 @@
 source :rubygems
 
+ruby '1.9.3'
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -23,4 +25,10 @@ group :test do
   gem 'rack-test'
   gem 'capybara'
   gem 'shoulda-matchers'
+end
+
+group :development do
+	gem 'pry'
+	gem 'pry-nav'
+
 end
