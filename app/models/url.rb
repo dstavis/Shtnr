@@ -1,6 +1,6 @@
 class Url < ActiveRecord::Base
   belongs_to :user
-  validates :original, :format => {with: /(http:\/\/|https:\/\/)(w{3}[.])?([\w\d]+)([.][a-zA-Z]{2,3})([.][a-zA-Z]{2,3})?/}
+  validates :original, :format => {with: /(http:\/\/|https:\/\/)(w{3}[.])?([\w\d]+)([.][a-zA-Z]{2,12})([.][a-zA-Z]{2,12})?/}
 
   after_validation :fill_in
 
