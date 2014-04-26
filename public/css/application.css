@@ -1,0 +1,55 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 20px 20px 20px 20px;
+  border: 1px dotted black;
+}
+th {
+  text-align: left;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+header h1{
+  display: inline;
+}
+
+header {
+  position: relative;
+
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: #bada55;
+  border-bottom: solid 5px #a9c944;
+}
+
+header img{
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.login {
+  position: absolute;
+  left: 30%;
+  top: 15px;
+}
+
+header form{
+  font-size: small;
+  font-family: verdana;
+}
+
+.main{
+  padding-top:1px;
+  padding-left: 40px;
+  background-color: teal; /*#cbeb66;*/
+  /*color: white;*/
+}
+
+.container form input{
+  display: inline-block;
+  margin-bottom: 5px;
+}

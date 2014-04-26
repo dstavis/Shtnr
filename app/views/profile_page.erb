@@ -1,0 +1,18 @@
+<form action='/urls' method='post'>
+  <input type='text' name='original'>
+  <input type='submit' value='Shtn'>
+</form>
+
+
+
+
+<% if current_user.id == @id %>
+  <ol>
+  <% current_user.urls.each do |url|%>
+    <li><h4><%= url.original %></h4><br>
+    <a href="/<%= url.short %>">shtnr/<%=url.short%></a> click count: <%=url.click_count%></li>
+  <% end %>
+  </ol>
+<% else %>
+  You are not logged in as this user! So you can't see their urls. That's private.
+<% end %>

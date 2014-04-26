@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <header>
+    <a href='/'><img class='logo' src="will_shatner.jpg"><h1>Shtnr</h1></a>
+    <div class="login">
+      <% unless logged_in? %>
+        <form action='/login' method='post'>
+          Email: <input type='text' name='email'>
+           Password: <input type='text' name='password'>
+          <input type='submit' value='Login'>
+        </form>
+
+        <form action='/users' method='post'>
+        Email: <input type='text' name='email'>
+        Password: <input type='text' name='password'>
+        <input type='submit' value='Create Account'>
+      </form>
+      <% else %> <br>
+        <form action='/logout' method='post'>
+          <input type='submit' value='Logout'>
+        </form>
+    <% end %>
+  </div>
+</header>
+  <div class='main'>
+      <%= yield %>
+  </div>
+</body>
+</html>

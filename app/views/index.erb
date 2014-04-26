@@ -1,0 +1,13 @@
+<div class='container'>
+  <form action='/urls' method='post'>
+    <input type='text' name='original' size='50%'>
+    <input type='submit' value='Shtn'>
+  </form>
+</div>
+
+<ol>
+<% @urls.each do |url|%>
+  <li><h4><%= url.original %></h4><br>
+  <a href="/<%= url.short %>">shtnr/<%=url.short%></a> click count: <%=url.click_count%></li>
+<% end %>
+</ol>
